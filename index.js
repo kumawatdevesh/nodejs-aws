@@ -5,7 +5,7 @@ const app = express();
 
 console.log(express.static(path.join(__dirname, 'public')));
 
-// app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/static', function (req, res, next) {
     res.json([
@@ -17,5 +17,5 @@ app.get('/static', function (req, res, next) {
 });
 
 app.listen(3001, function () {
-    console.log('running on port 3000');
+    console.log('running on port 3001');
 });
